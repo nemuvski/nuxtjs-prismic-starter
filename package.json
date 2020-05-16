@@ -1,0 +1,29 @@
+{
+  "name": "nuxtjs-prismic-starter",
+  "version": "1.0.0",
+  "description": "Nuxt.js + Prismic.io Starter",
+  "author": "K.Utsunomiya",
+  "private": true,
+  "engines": {
+    "node": "~12",
+    "npm": "~6"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/prismic": "^1.2.0",
+    "normalize.css": "^8.0.1",
+    "nuxt": "^2.12.2",
+    "prismic-javascript": "^2.7.1",
+    "prismic-vue": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
+    "node-sass": "^4.14.0",
+    "sass-loader": "^8.0.2"
+  }
+}
