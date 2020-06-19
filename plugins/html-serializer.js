@@ -45,6 +45,10 @@ export default function (type, element, content, children) {
     return result
   }
 
+  if (type === Elements.preformatted) {
+    return `<pre><code>${ children.join('') }</code></pre>`
+  }
+
   // Return null to stick with the default behavior for everything else
   return null
 }

@@ -20,6 +20,8 @@
 
 <script>
 import LinkButton from '@/components/LinkButton.vue'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/railscasts.css'
 
 export default {
   components: {
@@ -46,6 +48,11 @@ export default {
     }
   },
   mounted() {
+    const preformattedNodeList = this.$el.querySelectorAll('.js-rich-text pre code')
+    for (let i = 0; i < preformattedNodeList.length; i++) {
+      hljs.highlightBlock(preformattedNodeList[i])
+    }
+
     // Note: https://github.com/nuxt-community/prismic-module/issues/60
     this.$nextTick(this.addRouterPushEvents)
   },
