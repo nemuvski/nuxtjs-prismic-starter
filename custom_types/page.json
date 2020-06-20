@@ -15,12 +15,59 @@
       }
     },
     "body": {
-      "type": "StructuredText",
+      "type": "Slices",
+      "fieldset": "Slice zone",
       "config": {
-        "multi": "paragraph, preformatted, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
-        "allowTargetBlank": true,
-        "label": "Body",
-        "placeholder": "記事本文です"
+        "labels": {
+          "text": [ ],
+          "rich_text": [ ],
+          "preformatted_text": [ ]
+        },
+        "choices": {
+          "preformatted_text": {
+            "type": "Slice",
+            "fieldset": "Preformatted Text",
+            "description": "Preformatted text format",
+            "icon": "code",
+            "display": "list",
+            "non-repeat": {
+              "lang": {
+                "type": "Select",
+                "config": {
+                  "options": [ "javascript", "css", "html" ],
+                  "default_value": "javascript",
+                  "label": "Language"
+                }
+              },
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "preformatted",
+                  "label": "Preformatted Text"
+                }
+              }
+            },
+            "repeat": { }
+          },
+          "rich_text": {
+            "type": "Slice",
+            "fieldset": "Rich Text",
+            "description": "Rich text format",
+            "icon": "text_fields",
+            "display": "list",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Rich Text"
+                }
+              }
+            },
+            "repeat": { }
+          }
+        }
       }
     }
   }

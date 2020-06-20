@@ -8,8 +8,19 @@
       </time>
     </div>
 
-    <div class="page-detail__body js-rich-text">
-      <prismic-rich-text :field="body" />
+    <div class="page-detail__body js-body">
+      <div v-for="(slice, idx) in slices" :key="`slice-${idx}`">
+        <!-- スライス: Rich Text -->
+        <template v-if="slice.slice_type == 'rich_text'">
+          <prismic-rich-text :field="slice.primary.text" />
+        </template>
+        <!-- スライス: Preformatted Text -->
+        <template v-else-if="slice.slice_type == 'preformatted_text'">
+          <pre>
+            <code :class="`${slice.primary.lang}`">{{ $prismic.asText(slice.primary.text) }}</code>
+          </pre>
+        </template>
+      </div>
     </div>
 
     <div class="page-detail__link-top">
@@ -19,6 +30,8 @@
 </template>
 
 <script>
+import hljs from 'highlight.js'
+import 'highlight.js/styles/railscasts.css'
 import LinkButton from '@/components/LinkButton.vue'
 
 export default {
@@ -34,7 +47,7 @@ export default {
           first: content.first_publication_date,
           last: content.last_publication_date,
         },
-        body: content.data.body,
+        slices: content.data.body,
       }
     } catch(e) {
       error({ statusCode: 404 })
@@ -46,6 +59,11 @@ export default {
     }
   },
   mounted() {
+    const preformattedNodeList = this.$el.querySelectorAll('.js-body pre code')
+    for (let i = 0; i < preformattedNodeList.length; i++) {
+      hljs.highlightBlock(preformattedNodeList[i])
+    }
+
     // Note: https://github.com/nuxt-community/prismic-module/issues/60
     this.$nextTick(this.addRouterPushEvents)
   },
