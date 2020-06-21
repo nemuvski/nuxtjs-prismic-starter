@@ -39,7 +39,6 @@ export default {
     '@nuxtjs/prismic',
     // Note: https://prismic.io/docs/vuejs/getting-started/prismic-nuxt
     '@/modules/static',
-    '@/modules/crawler',
   ],
 
   prismic: {
