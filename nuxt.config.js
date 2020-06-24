@@ -62,5 +62,7 @@ export default {
 
   generate: {
     fallback: '404.html',
+    // https://nuxtjs.org/api/configuration-generate#crawler
+    crawler: true,
   },
 }
