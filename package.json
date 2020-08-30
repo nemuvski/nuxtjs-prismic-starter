@@ -15,7 +15,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/prismic": "^1.2.0",
+    "@nuxtjs/prismic": "^1.2.3",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.14.4",
     "prismic-javascript": "^3.0.2",
