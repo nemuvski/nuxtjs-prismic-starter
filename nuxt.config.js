@@ -1,7 +1,7 @@
 const siteName = 'Nuxt.js + Prismic.io Starter'
 
 export default {
-  mode: 'universal',
+  ssr: true,
 
   env: {
     siteName
