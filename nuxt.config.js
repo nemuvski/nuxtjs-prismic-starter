@@ -1,3 +1,6 @@
+import Fibers from 'fibers'
+import Sass from 'sass'
+
 const siteName = 'Nuxt.js + Prismic.io Starter'
 
 export default {
@@ -57,6 +60,14 @@ export default {
   },
 
   build: {
+    loaders: {
+      scss: {
+        implementation: Sass,
+        sassOptions: {
+          fiber: Fibers,
+        },
+      },
+    },
     extend(config, ctx) {
       config.resolve.alias['vue'] = 'vue/dist/vue.common'
     },
