@@ -1,6 +1,3 @@
-import Fibers from 'fibers'
-import Sass from 'sass'
-
 const siteName = 'Nuxt.js + Prismic.io Starter'
 
 export default {
@@ -62,9 +59,9 @@ export default {
   build: {
     loaders: {
       scss: {
-        implementation: Sass,
+        implementation: require('sass'),
         sassOptions: {
-          fiber: Fibers,
+          fiber: require('fibers'),
         },
       },
     },
