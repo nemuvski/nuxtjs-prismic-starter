@@ -7,8 +7,6 @@ export default {
     siteName
   },
 
-  target: 'static',
-
   head: {
     titleTemplate: `%s | ${siteName}`,
     meta: [
