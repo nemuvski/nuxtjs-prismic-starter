@@ -17,14 +17,14 @@
   "dependencies": {
     "@nuxtjs/prismic": "^1.2.4",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.14.7",
+    "nuxt": "^2.14.11",
     "prismic-javascript": "^3.0.2",
     "prismic-vue": "^2.0.1"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
     "fibers": "^5.0.0",
-    "sass": "^1.28.0",
-    "sass-loader": "^10.0.5"
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
   }
 }
