@@ -17,7 +17,7 @@
   "dependencies": {
     "@nuxtjs/prismic": "^1.2.4",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.14.11",
+    "nuxt": "^2.14.12",
     "prismic-javascript": "^3.0.2",
     "prismic-vue": "^2.0.1"
   },
