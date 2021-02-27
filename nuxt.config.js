@@ -2,6 +2,7 @@ const siteName = 'Nuxt.js + Prismic.io Starter'
 
 export default {
   ssr: true,
+  target: 'static',
 
   env: {
     siteName
@@ -36,9 +37,7 @@ export default {
   ],
 
   modules: [
-    '@nuxtjs/prismic',
-    // Note: https://prismic.io/docs/vuejs/getting-started/prismic-nuxt
-    '@/modules/static',
+    '@nuxtjs/prismic'
   ],
 
   prismic: {
